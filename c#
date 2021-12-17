@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;
+
+
+namespace schleifen
+{
+    class Program
+    {
+
+        static void Main()
+        { 
+            bool richtigeLösung = false;
+
+            Console.WriteLine("Gib zwei zahlen ein und wählen sie einen operator");
+
+            int zahl = int.Parse(Console.ReadLine());
+
+            string op = Console.ReadLine();
+
+            int zahl2 = int.Parse(Console.ReadLine());
+
+            while (!richtigeLösung)
+            {
+                Console.Write("Was ist das Ergebnis aus " + zahl + op + zahl2 +" :");
+
+                int ergebnis = int.Parse(Console.ReadLine());
+
+
+                if (op == "+")
+                {
+                    richtigeLösung = ergebnis == zahl + zahl2;
+                }
+                else if (op == "-")
+                {
+                    richtigeLösung = ergebnis == zahl - zahl2;
+                }
+                else if (op == "*")
+                {
+                    richtigeLösung = ergebnis == zahl * zahl2;
+                }
+                else if (op == "/")
+                {
+                    richtigeLösung = ergebnis == zahl / zahl2;
+                }
+                
+                if (richtigeLösung)
+                {
+                    Console.WriteLine("Sie haben die Aufgabe richtig gelöst");
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben das falsche Ergebnis.Versuchen sie es noch einmal");
+                }
+
+
+
+            }
+        }
+
+    }
+}
